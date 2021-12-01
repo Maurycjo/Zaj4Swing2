@@ -8,9 +8,12 @@ public class MyButton extends JButton
     public MyButton(String title)
     {
         this.setText(title);
-        this.setSize(200, 40);
         this.setVisible(true);
-        //this.addActionListener((ActionListener) this);
+    }
+    public MyButton()
+    {
+        this.setVisible(true);
+        this.setEnabled(false);
     }
 
 

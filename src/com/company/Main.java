@@ -7,15 +7,9 @@ public class Main
 
     public static void main(String[] args)
     {
-        /*
-        SwingUtilities.invokeLater(()->
-        {
-            new MainWindow("aplikacja, Maurycy Niewczas");
-        });
-        */
 
         MainWindow window = new MainWindow("tets");
-        window.addButtons();
+       window.start();
 
     }
 }
