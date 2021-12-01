@@ -1,0 +1,17 @@
+klawiature i mysze
+- przy danej kontrolce która odbiera zdarzenie(obiekty anonimowe), chyba że lamda
+-lub dodajemy listener ktora obsluguje wszystkie(szybsze), switch
+
+MouseListener, wejscie myszy, pojawienie sie myszy nad dana kontrolka
+mouseExit, kiedy opusci obszar
+MouseAdapter- abstrakcyjna klasa zeby nie nadpisywac interfejsu MouseListener
+
+super.mouseEntered(e), wyglad myszy
+
+kanwa jest panalem implementuje MouseInputListener, nasluchiwzcz klawiatury
+ale musi miec fokus, trzeba znaleźć
+
+zrobienie apki uciekający przycisk, caly czas ma uciekać, ale musi miec obszar na który można najechać,
+cancel- powinien przywracać przycisk do pierwotnego położenia, mouseClick jest niskiego poziomu
+na kanwie nalezy rysować figury, kwadrat i kółko(owal), w zależności czy naciśniemy k (kwadrat) o(okrąg)
+ustalamy myszą gdzie są rysowane
