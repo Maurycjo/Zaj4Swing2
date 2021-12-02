@@ -4,12 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-public class MainWindow extends JFrame implements MouseListener, ActionListener
+
+
+public class MainWindow extends JFrame implements MouseListener, ActionListener, KeyListener
 {
     //JButton but1;
     JPanel but1;
     JButton hs, he, hw; //hitboxy
+    JButton resetPosition;
     Random rand= new Random();
+    Circle panel;
+
+
+
 
     MainWindow()
     {
@@ -20,6 +27,7 @@ public class MainWindow extends JFrame implements MouseListener, ActionListener
         this.setResizable(false);
         centerFrame();
         this.setVisible(true);
+        this.addKeyListener(this);
     }
 
     private void centerFrame()
@@ -69,29 +77,44 @@ public class MainWindow extends JFrame implements MouseListener, ActionListener
     he.addMouseListener(this);
     but1.add(he);
 
+    resetPosition= new JButton();
+    resetPosition.setVisible(true);
+    resetPosition.setSize(560, 40);
+    resetPosition.setLocation(10,300);
+    resetPosition.setText("Reset pozycji");
+    resetPosition.addActionListener(this);
+    this.getContentPane().add(resetPosition);
+
+
+        panel = new Circle();
+       // panel.setVisible(true);
+        this.getContentPane().add(panel);
+
+        
+
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e)
     {
         but1.setLocation(rand.nextInt(400), rand.nextInt(300));
-
-
-
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        System.out.println("exit");
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        but1.setLocation(200, 100);
     }
     @Override
     public void mouseClicked(MouseEvent e) {
+        int x=e.getX();
+        int y=e.getY();
+        System.out.println(x+","+y);
 
     }
 
@@ -107,5 +130,30 @@ public class MainWindow extends JFrame implements MouseListener, ActionListener
     }
 
 
+    @Override
+    public void keyTyped(KeyEvent e)
+    {
 
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+
+
+
+        if(e.getKeyChar()=='k'||e.getKeyChar()=='K')
+        {
+
+
+
+
+
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }
